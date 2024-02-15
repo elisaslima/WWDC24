@@ -92,7 +92,7 @@ struct BiographyView: View {
                     Color.clear.preference(key: ViewOffsetKey.self, value: -$0.frame(in: .named("scroll")).origin.y)
                 })
                 .onPreferenceChange(ViewOffsetKey.self) { scrollOffset in
-                    completeReading = scrollOffset > 100
+                    completeReading = scrollOffset >= 929
                     detector.send(scrollOffset)
                 }
                 
