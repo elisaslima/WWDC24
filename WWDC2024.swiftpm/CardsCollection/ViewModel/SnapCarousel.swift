@@ -34,13 +34,11 @@ struct SnapCarousel<Content: View, T: Identifiable>: View {
                 ForEach(list) { item in
                     content(item)
                         .frame(width: proxy.size.width - trailingSpace)
-//                        .frame(width: 150)
-                    
                 }
             }
             .padding(.horizontal, spacing)
             .offset(x: (CGFloat(currentIndex) * -width) + (currentIndex != 0 ? adjustMentWidth : 0) + offset)
-            .gesture(
+            .highPriorityGesture(
                 DragGesture()
                     .updating($offset, body: { value, out, _ in
                         out =  value.translation.width

@@ -9,10 +9,22 @@ import SwiftUI
 
 struct BarView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        CustomProgressView()
     }
 }
 
 #Preview {
     BarView()
+}
+
+struct CustomProgressView: View {
+    var body: some View {
+        
+        ZStack {
+            Capsule()
+                .fill(LinearGradient(gradient: .init(colors: [Color(red: 1, green: 1,blue: 0.94), Color.white]), startPoint: .leading, endPoint: .trailing))
+                .frame(height: 20)
+        }
+    }
 }
