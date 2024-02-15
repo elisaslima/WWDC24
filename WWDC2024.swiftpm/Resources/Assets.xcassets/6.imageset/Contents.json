@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "experiment, lab, laboratory, woman 2 chemistry.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "experiment, lab, laboratory, woman 2 chemistry 1.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "experiment, lab, laboratory, woman 3 chemistry.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
