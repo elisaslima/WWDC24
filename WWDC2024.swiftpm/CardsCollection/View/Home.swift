@@ -15,8 +15,7 @@ struct Home: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 15) {
-                Text("After reading all the stories, click on 'Finish' to see a special message.")
-                    .padding()
+                BarView()
                 
                 SnapCarousel(index: $currentIndex, items: posts) { post in
                         GeometryReader { proxy in
@@ -48,7 +47,6 @@ struct Home: View {
             }
         }
     }
-
 
 #Preview {
     Home()

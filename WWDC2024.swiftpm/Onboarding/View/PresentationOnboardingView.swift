@@ -11,13 +11,16 @@ struct PresentationOnboardingView: View {
     var data: OnboardingData
     
     var body: some View {
-        ZStack {
-            Color.teal.opacity(0.3)
-               .ignoresSafeArea()
+        VStack {
+            Text(data.onboardingTitle)
+                .font(.custom("Silom", size: 24))
+                .bold()
+                .multilineTextAlignment(.center)
+                .padding()
             
             VStack (spacing: 16) {
                 Text(data.onboardingDescription)
-                    .font(.body)
+                    .font(.custom("Single Day", size: 19))
                     .multilineTextAlignment(.center)
                 
                 Image(data.onboardingImage)

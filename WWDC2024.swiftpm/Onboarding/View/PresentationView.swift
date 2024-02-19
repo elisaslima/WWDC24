@@ -24,7 +24,7 @@ struct PresentationView: View {
             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
             
             .onChange(of: currentTab) { newTab in
-                if newTab == 4 {
+                if newTab == 5 {
                     completeOnboarding = true
                 }
             }
