@@ -32,12 +32,13 @@ struct BiographyView: View {
                     Spacer()
                     
                     Rectangle()
-                        .fill(Color.white)
+                        .fill(Color.clear)
                         .frame(width: 350, height: 200)
                         .overlay (
                             Image(call.scientistImage)
                                .resizable()
                                .scaledToFit()
+                               .shadow(radius: 5)
                         )
 
                     Spacer()
@@ -46,7 +47,7 @@ struct BiographyView: View {
                         HStack {
                             Text("Education")
                                 .bold()
-                                .font(.title2)
+                                .font(.custom("Silom", size: 21))
                                 .padding()
                             
                             Spacer()
@@ -54,13 +55,14 @@ struct BiographyView: View {
                         
                         Text(call.education)
                             .padding(.horizontal)
+                            .font(.custom("Single Day", size: 20))
                     }
                     
                     VStack {
                         HStack {
                             Text("Biography")
                                 .bold()
-                                .font(.title2)
+                                .font(.custom("Silom", size: 21))
                                 .padding()
                             
                             Spacer()
@@ -68,21 +70,23 @@ struct BiographyView: View {
                         
                         Text(call.biography)
                             .padding(.horizontal)
+                            .font(.custom("Single Day", size: 20))
                        
                         VStack {
                             Rectangle()
-                                .fill(Color.white)
+                                .fill(Color.clear)
                                 .frame(width: 400, height: 200)
                                 .overlay (
                                     Image(call.endingImage)
                                         .resizable()
                                         .frame(width: 350, height: 200)
                                         .scaledToFit()
+                                        .shadow(radius: 5)
                                 )
                         }
                         
                         Text(call.subtitle)
-                            .font(.subheadline)
+                            .font(.custom("Single Day", size: 18))
                             .italic()
                     }
                     
@@ -92,7 +96,7 @@ struct BiographyView: View {
                     Color.clear.preference(key: ViewOffsetKey.self, value: -$0.frame(in: .named("scroll")).origin.y)
                 })
                 .onPreferenceChange(ViewOffsetKey.self) { scrollOffset in
-                    completeReading = scrollOffset >= 928
+                    completeReading = scrollOffset >= 864
                     detector.send(scrollOffset)
                 }
                 

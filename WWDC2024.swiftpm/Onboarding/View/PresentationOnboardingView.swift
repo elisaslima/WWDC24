@@ -14,11 +14,10 @@ struct PresentationOnboardingView: View {
         VStack {
             Text(data.onboardingTitle)
                 .font(.custom("Silom", size: 24))
-                .bold()
                 .multilineTextAlignment(.center)
                 .padding()
             
-            VStack (spacing: 16) {
+            VStack(spacing: 16) {
                 Text(data.onboardingDescription)
                     .font(.custom("Single Day", size: 19))
                     .multilineTextAlignment(.center)
