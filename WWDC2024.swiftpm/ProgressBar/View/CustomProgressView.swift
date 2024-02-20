@@ -1,5 +1,5 @@
 //
-//  SwiftUIView.swift
+//  CustomProgressView.swift
 //  
 //
 //  Created by Ana Elisa Lima on 16/02/24.

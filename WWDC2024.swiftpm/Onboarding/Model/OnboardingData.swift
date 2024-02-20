@@ -1,5 +1,5 @@
 //
-//  SwiftUIView.swift
+//  OnboardingData.swift
 //  
 //
 //  Created by Ana Elisa Lima on 16/01/24.

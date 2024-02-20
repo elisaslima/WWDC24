@@ -1,5 +1,5 @@
 //
-//  SwiftUIView.swift
+//  BarView.swift
 //  
 //
 //  Created by Ana Elisa Lima on 15/02/24.

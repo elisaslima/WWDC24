@@ -1,5 +1,5 @@
 //
-//  SwiftUIView.swift
+//  BiographyView.swift
 //  
 //
 //  Created by Ana Elisa Lima on 19/01/24.

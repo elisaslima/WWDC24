@@ -1,5 +1,5 @@
 //
-//  SwiftUIView 2.swift
+//  Home.swift
 //  
 //
 //  Created by Ana Elisa Lima on 24/01/24.
@@ -28,11 +28,9 @@ struct Home: View {
                     }
                     .padding(.vertical)
                     
-                    NavigationLink {
-                        FinalView()
-                    } label: {
+                NavigationLink (destination: FinalView().navigationBarBackButtonHidden(true)) {
                         Text("Finish")
-                            .frame(height: UIScreen.main.bounds.height / 21)
+                            .frame(height: UIScreen.main.bounds.height / 25)
                             .frame(maxWidth: .infinity)
                     }
                     .buttonStyle(.borderedProminent)
