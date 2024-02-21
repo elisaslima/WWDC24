@@ -88,6 +88,7 @@ struct BiographyView: View {
                         Text(call.subtitle)
                             .font(.custom("Single Day", size: 18))
                             .italic()
+                            .multilineTextAlignment(.center)
                     }
                     
                     Spacer()
