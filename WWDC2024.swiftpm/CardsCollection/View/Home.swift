@@ -11,6 +11,7 @@ struct Home: View {
     @State var currentIndex: Int = 0
     @State var posts: [CardData] = []
     @State var selectedIndex: Int? = nil
+    @State var showHelp: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -27,6 +28,7 @@ struct Home: View {
                         }
                     }
                     .padding(.vertical)
+                    .shadow(radius: 3)
                     
                 NavigationLink (destination: FinalView().navigationBarBackButtonHidden(true)) {
                         Text("Finish")
@@ -39,8 +41,23 @@ struct Home: View {
                 }
                 .frame(maxHeight: .infinity, alignment: .top)
                 .navigationTitle("Nome")
-                .onAppear {
-                    posts = CardData.generateCards()
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            showHelp = true
+                        } label: {
+                           Image(systemName: "questionmark.circle")
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                        }
+                        .sheet(isPresented: $showHelp) {
+                            HelpView(showHelp: $showHelp)
+                        }
+                        
+                        .onAppear {
+                            posts = CardData.generateCards()
+                        }
+                    }
                 }
             }
         }

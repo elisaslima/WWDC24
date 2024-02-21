@@ -34,7 +34,7 @@ struct CardView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 80, height: 30)
-                        .foregroundColor(Color.white)
+                        .foregroundColor(Color.black)
                         .offset(y: -180)
                         .onTapGesture {
                             overlayText = post.cardInformation

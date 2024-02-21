@@ -89,6 +89,7 @@ struct BiographyView: View {
                             .font(.custom("Single Day", size: 18))
                             .italic()
                             .multilineTextAlignment(.center)
+                            .padding()
                     }
                     
                     Spacer()
@@ -97,7 +98,7 @@ struct BiographyView: View {
                     Color.clear.preference(key: ViewOffsetKey.self, value: -$0.frame(in: .named("scroll")).origin.y)
                 })
                 .onPreferenceChange(ViewOffsetKey.self) { scrollOffset in
-                    completeReading = scrollOffset >= 864
+                    completeReading = scrollOffset >= 923
                     detector.send(scrollOffset)
                 }
                 
