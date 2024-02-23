@@ -12,8 +12,6 @@ struct FinalView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Spacer()
-                
                 Text("Thank you for helping!")
                     .font(.custom("Silom", size: 24))
                     .multilineTextAlignment(.center)
@@ -24,7 +22,6 @@ struct FinalView: View {
                     .multilineTextAlignment(.center)
                     .padding()
                 
-                Spacer()
                 
                 NavigationLink (destination: PresentationView().navigationBarBackButtonHidden(true)) {
                     Text("Start Again")

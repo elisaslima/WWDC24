@@ -25,11 +25,8 @@ struct MyApp: App {
     
     var body: some Scene {
         WindowGroup {
-                if isOnboarding {
-                    PresentationView()
-                } else {
-                    Carousel()
-             }
+                PresentationView()
+//            BarView()
         }
     }
 }

@@ -14,22 +14,22 @@ struct CustomProgressView: View {
     var cases: String {
         switch progress {
         case 0.0..<0.20:
-            return "RedEllipse"
+            return "mood1"
             
         case 0.20..<0.40:
-            return "OrangeEllipse"
+            return "mood2"
             
         case 0.40..<0.60:
-            return "YellowEllipse"
+            return "mood3"
             
         case 0.60..<0.80:
-            return "MintEllipse"
+            return "mood4"
             
         case 0.80..<1.0:
-            return "GreenEllipse"
+            return "mood5"
             
         default:
-            return "GreenEllipse"
+            return "mood5"
         }
     }
     
@@ -55,7 +55,7 @@ struct CustomProgressView: View {
                     )
             }
             .padding()
-            .cornerRadius(15.0)
+//            .cornerRadius(15.0)
         }
     
     func calPercent() -> CGFloat {

@@ -15,10 +15,13 @@ struct Home: View {
     
     var body: some View {
         NavigationStack {
-            VStack(spacing: 15) {
-                BarView()
+            ZStack {
+                Color("BackgroundColor")
                 
-                SnapCarousel(index: $currentIndex, items: posts) { post in
+                VStack(spacing: 15) {
+                    BarView()
+                    
+                    SnapCarousel(index: $currentIndex, items: posts) { post in
                         GeometryReader { proxy in
                             let size = proxy.size
                             
@@ -30,7 +33,7 @@ struct Home: View {
                     .padding(.vertical)
                     .shadow(radius: 3)
                     
-                NavigationLink (destination: FinalView().navigationBarBackButtonHidden(true)) {
+                    NavigationLink (destination: FinalView().navigationBarBackButtonHidden(true)) {
                         Text("Finish")
                             .frame(height: UIScreen.main.bounds.height / 25)
                             .frame(maxWidth: .infinity)
@@ -40,13 +43,13 @@ struct Home: View {
                     
                 }
                 .frame(maxHeight: .infinity, alignment: .top)
-                .navigationTitle("Nome")
+                //                .navigationTitle("Nome")
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
                             showHelp = true
                         } label: {
-                           Image(systemName: "questionmark.circle")
+                            Image(systemName: "questionmark.circle")
                                 .resizable()
                                 .frame(width: 30, height: 30)
                         }
@@ -62,6 +65,7 @@ struct Home: View {
             }
         }
     }
+}
 
 #Preview {
     Home()

@@ -17,11 +17,11 @@ struct HelpView: View {
     @Binding var showHelp: Bool
     
     @State private var explanationCases = [
-        allCases(moods:"RedEllipse", texts: "For a progress between 0% and 20%"),
-        allCases(moods:"OrangeEllipse", texts: "For a progress between 20% and 40%"),
-        allCases(moods:"YellowEllipse", texts: "For a progress between 40% and 60%"),
-        allCases(moods:"MintEllipse", texts: "For a progress between 60% and 80%"),
-        allCases(moods:"GreenEllipse", texts: "For a progress between 60% and 100%")
+        allCases(moods:"mood1", texts: "For a progress between 0% and 20%"),
+        allCases(moods:"mood2", texts: "For a progress between 20% and 40%"),
+        allCases(moods:"mood3", texts: "For a progress between 40% and 60%"),
+        allCases(moods:"mood4", texts: "For a progress between 60% and 80%"),
+        allCases(moods:"mood5", texts: "For a progress between 60% and 100%")
     ]
     
     var body: some View {

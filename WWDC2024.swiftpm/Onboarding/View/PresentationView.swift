@@ -13,35 +13,37 @@ struct PresentationView: View {
     @AppStorage("isOnboarding") var isOnboarding: Bool?
     
     var body: some View {
-        VStack (spacing: 24) {
-            TabView (selection: $currentTab) {
-                ForEach (OnboardingData.list) {viewData in
-                    PresentationOnboardingView(data: viewData)
-                        .tag(viewData.id)
+        NavigationStack {
+            VStack (spacing: 24) {
+                TabView (selection: $currentTab) {
+                    ForEach (OnboardingData.list) {viewData in
+                        PresentationOnboardingView(data: viewData)
+                            .tag(viewData.id)
+                    }
                 }
-            }
-            .tabViewStyle(PageTabViewStyle())
-            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
-            
-            .onChange(of: currentTab) { newTab in
-                if newTab == 5 {
-                    completeOnboarding = true
+                .tabViewStyle(PageTabViewStyle())
+                .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+                
+                .onChange(of: currentTab) { newTab in
+                    if newTab == 5 {
+                        completeOnboarding = true
+                    }
                 }
+                
+                NavigationLink(destination: Carousel().navigationBarBackButtonHidden(true)) {
+                    Text("Let's start!")
+                        .frame(height: UIScreen.main.bounds.height/25)
+                        .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.borderedProminent)
+                .disabled(!completeOnboarding)
+                
             }
-            
-            Button {
-               isOnboarding = false
-            } label: {
-                Text("Let's start!")
-                    .frame(height: UIScreen.main.bounds.height/25)
-                    .frame(maxWidth: .infinity)
-            }
-            .buttonStyle(.borderedProminent)
-            .disabled(!completeOnboarding)
-            
+            .padding(16)
         }
-        .padding(16)
     }
 }
+
+
 
 
