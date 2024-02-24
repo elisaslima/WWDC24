@@ -1,8 +1,11 @@
 import SwiftUI
 
+// MARK: - MyApp
+
 @main
 struct MyApp: App {
     @AppStorage("isOnboarding") var isOnboarding: Bool = true
+    @StateObject var progressController = ProgressReading()
     
     init() {
         let cfurl = Bundle.main.url(forResource: "SingleDay-Regular", withExtension: "ttf")!
@@ -26,7 +29,7 @@ struct MyApp: App {
     var body: some Scene {
         WindowGroup {
                 PresentationView()
-//            BarView()
+                 .environmentObject(progressController)
         }
     }
 }

@@ -1,11 +1,14 @@
 //
 //  PresentationOnboardingView.swift
-//
+//  WWDC2024
 //
 //  Created by Ana Elisa Lima on 16/01/24.
 //
 
 import SwiftUI
+
+// MARK: - PresentationOnboardingView
+/* Creates the view that appears on each page of the onboarding */
 
 struct PresentationOnboardingView: View {
     var data: OnboardingData
@@ -20,7 +23,8 @@ struct PresentationOnboardingView: View {
             VStack(spacing: 16) {
                 Text(data.onboardingDescription)
                     .font(.custom("Single Day", size: 19))
-                    .multilineTextAlignment(.center)
+                // MARK: for accessibility purposes
+                    .padding(.leading)
                 
                 Image(data.onboardingImage)
                     .resizable()

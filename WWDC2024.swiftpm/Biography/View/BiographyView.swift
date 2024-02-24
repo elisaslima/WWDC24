@@ -1,6 +1,6 @@
 //
 //  BiographyView.swift
-//  
+//  WWDC2024
 //
 //  Created by Ana Elisa Lima on 19/01/24.
 //
@@ -8,7 +8,11 @@
 import SwiftUI
 import Combine
 
+// MARK: - BiographyView
+/* Creates the view responsible to show each astronaut's biography informations */
+
 struct BiographyView: View {
+    @EnvironmentObject private var currentReading: ProgressReading
     @State private var completeReading = false
     let detector: CurrentValueSubject<CGFloat, Never>
     let publisher: AnyPublisher<CGFloat, Never>
@@ -114,7 +118,13 @@ struct BiographyView: View {
                 .navigationTitle(call.navigationTitle)
             }
             
-            NavigationLink(destination: Carousel().navigationBarBackButtonHidden(true)) {
+            NavigationLink(destination: Carousel().onAppear {
+                if !call.isRead {
+                    currentReading.biographiesRead += 1
+                    Container.elements[call.id - 1].isRead = true
+                }
+            }
+                .navigationBarBackButtonHidden(true)) {
                 Text("Done")
                     .frame(height: UIScreen.main.bounds.height / 25)
                     .frame(maxWidth: .infinity)
@@ -142,5 +152,6 @@ struct ViewOffsetKey: PreferenceKey {
                              education: Container.elements[0].education,
                              biography: Container.elements[0].biography,
                              endingImage: Container.elements[0].endingImage,
-                             subtitle: Container.elements[0].subtitle))
+                             subtitle: Container.elements[0].subtitle,
+                             isRead: false))
 }

@@ -1,11 +1,14 @@
 //
 //  Call.swift
-//  
+//  WWDC2024
 //
 //  Created by Ana Elisa Lima on 07/02/24.
 //
 
 import Foundation
+
+// MARK: - Call
+/* Call model related to Container */
 
 struct Call: Codable {
     var id: Int
@@ -15,4 +18,5 @@ struct Call: Codable {
     var biography: String
     var endingImage: String
     var subtitle: String
+    var isRead: Bool
 }

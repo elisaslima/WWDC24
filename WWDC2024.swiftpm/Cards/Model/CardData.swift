@@ -1,12 +1,15 @@
 //
 //  CardData.swift
-//  
+//  WWDC2024
 //
 //  Created by Ana Elisa Lima on 18/01/24.
 //
 
 import Foundation
 import SwiftUI
+
+// MARK: - CardData
+/* Card data model related to my card view */
 
 struct CardData: Identifiable, Hashable {
     var id = UUID()

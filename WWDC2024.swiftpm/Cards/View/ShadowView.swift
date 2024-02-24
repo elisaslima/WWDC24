@@ -1,11 +1,14 @@
 //
 //  ShadowView.swift
-//  
+//  WWDC2024
 //
 //  Created by Ana Elisa Lima on 17/01/24.
 //
 
 import SwiftUI
+
+// MARK: - ShadowView
+/* Creates the view responsible to show each astronaut's card descriptions */
 
 struct ShadowView: View {
     var cardDescription: String

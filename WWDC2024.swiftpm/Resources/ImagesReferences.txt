@@ -1,0 +1,72 @@
+// LIST OF REFERENCES
+
+Here is a list of all the photos used on the app and their respective references. I don't own any of them.
+
+/// Valentina Tereshkova
+
+  - ValentinaTereshkova: Russian Federal Space Agency/Disclosure
+  
+  - ValentinaTereshkova2: AFP Photo/Leon Neal
+------------------------------------------------------------------------------------------
+
+/// Sally Ride
+
+  - SallyRide: Bettmann/Getty Images (NASA JSC)
+  
+  - SallyRide2: NASA JSC
+------------------------------------------------------------------------------------------
+
+/// Mae Jemison:
+
+  - MaeJemison: NASA JSC
+  
+  - MaeJemison2: NASA JSC/Robert G. Markowitz
+------------------------------------------------------------------------------------------
+
+/// Ellen Ochoa
+
+  - EllenOchoa: NASA/Liaison
+  
+  - EllenOchoa2: NASA
+------------------------------------------------------------------------------------------
+
+/// Chiaki Mukai
+
+  - ChiakiMukai: NASA/JAXA
+  
+  - ChiakiMukai2: NASA JSC
+------------------------------------------------------------------------------------------
+
+/// Eileen Collins
+
+  - EileenCollins: NASA
+  
+  - EileenCollins2: NASA/Science Photo Library
+------------------------------------------------------------------------------------------
+
+/// Kalpana Chawla
+
+  - KalpanaChawla: The U.S. National Archives
+  
+  - KalpanaChawla2: NASA
+------------------------------------------------------------------------------------------
+
+/// Liu Yang
+
+  - LiuYang: AFP Photo
+  
+  - LiuYang2: Xinhua News Agency / Qin Xian'an
+------------------------------------------------------------------------------------------
+
+/// Samantha Cristoforetti
+
+  - SamanthaCristoforetti: NASA/ESA
+  
+  - SamanthaCristoforetti2: NASA/Victor Ivanov
+------------------------------------------------------------------------------------------
+
+/// Christina Koch
+
+  - ChristonaKoch: NASA JSC
+  
+  - ChristonaKoch2: NASA

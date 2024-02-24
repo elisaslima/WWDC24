@@ -1,11 +1,14 @@
 //
 //  SnapCarousel.swift
-//  
+//  WWDC2024
 //
 //  Created by Ana Elisa Lima on 24/01/24.
 //
 
 import SwiftUI
+
+// MARK: - SnapCarousel
+/* Creates the logic behind the carousel */
 
 struct SnapCarousel<Content: View, T: Identifiable>: View {
     @Binding var index: Int

@@ -1,11 +1,14 @@
 //
 //  HelpView.swift
-//
+//  WWDC2024
 //
 //  Created by Ana Elisa Lima on 21/02/24.
 //
 
 import SwiftUI
+
+// MARK: - HelpView
+/* Creates the view responsible to show the instructions/help guide */
 
 struct allCases: Identifiable {
     let id = UUID()

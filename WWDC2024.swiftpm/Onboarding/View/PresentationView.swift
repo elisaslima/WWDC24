@@ -1,11 +1,14 @@
 //
 //  PresentationView.swift
-//  
+//  WWDC2024
 //
 //  Created by Ana Elisa Lima on 16/01/24.
 //
 
 import SwiftUI
+
+// MARK: - PresentationView
+/* Creates the whole onboarding experience */
 
 struct PresentationView: View {
     @State private var currentTab = 0

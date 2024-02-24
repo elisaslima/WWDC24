@@ -1,11 +1,14 @@
 //
 //  Home.swift
-//  
+//  WWDC2024
 //
 //  Created by Ana Elisa Lima on 24/01/24.
 //
 
 import SwiftUI
+
+// MARK: - Home
+/* Creates the view responsible to show the carousel of cards and their respective functions */
 
 struct Home: View {
     @State var currentIndex: Int = 0
@@ -43,7 +46,6 @@ struct Home: View {
                     
                 }
                 .frame(maxHeight: .infinity, alignment: .top)
-                //                .navigationTitle("Nome")
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {

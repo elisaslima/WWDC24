@@ -1,11 +1,14 @@
 //
 //  OnboardingData.swift
-//  
+//  WWDC2024
 //
 //  Created by Ana Elisa Lima on 16/01/24.
 //
 
 import SwiftUI
+
+// MARK: - OnboardingData
+/* Onboarding data model related to PresentationView */
 
 struct OnboardingData: Hashable, Identifiable {
     let id: Int

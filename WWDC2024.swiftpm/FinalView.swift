@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+// MARK: - FinalView
+/* Final view that shows the last message before the storytelling ends */
+
 struct FinalView: View {
     
     var body: some View {
@@ -23,7 +26,7 @@ struct FinalView: View {
                     .padding()
                 
                 
-                NavigationLink (destination: PresentationView().navigationBarBackButtonHidden(true)) {
+                NavigationLink (destination: Carousel().navigationBarBackButtonHidden(true)) {
                     Text("Start Again")
                         .frame(height: UIScreen.main.bounds.height / 25)
                         .frame(maxWidth: .infinity)
