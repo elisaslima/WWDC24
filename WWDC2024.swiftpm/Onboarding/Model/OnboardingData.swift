@@ -40,7 +40,7 @@ struct OnboardingData: Hashable, Identifiable {
         OnboardingData(id: 5,
                        onboardingImage: "onboardingImage5", 
                        onboardingTitle: "The Mission",
-                       onboardingDescription: "You're going to find 10 biographies of pioneer female astronauts on the next page. Every time you read one biography, Alice gets inspired. The more you read, the more Alice will get motivated. Now, let's start the mission!")
+                       onboardingDescription: "You will find the instruction on the next page. Now that you have accepted the mission, let's start!")
     ]
 }
 
