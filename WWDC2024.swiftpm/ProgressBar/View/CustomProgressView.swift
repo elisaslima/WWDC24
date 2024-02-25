@@ -1,6 +1,6 @@
 //
 //  CustomProgressView.swift
-//  WWDC2024
+//  Firstly: She
 //
 //  Created by Ana Elisa Lima on 16/02/24.
 //

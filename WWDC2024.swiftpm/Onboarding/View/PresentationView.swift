@@ -1,6 +1,6 @@
 //
 //  PresentationView.swift
-//  WWDC2024
+//  Firstly: She
 //
 //  Created by Ana Elisa Lima on 16/01/24.
 //
@@ -14,6 +14,7 @@ struct PresentationView: View {
     @State private var currentTab = 0
     @State private var completeOnboarding = false
     @AppStorage("isOnboarding") var isOnboarding: Bool?
+    @EnvironmentObject private var currentReading: ProgressReading
     
     var body: some View {
         NavigationStack {
@@ -47,7 +48,3 @@ struct PresentationView: View {
         }
     }
 }
-
-
-
-

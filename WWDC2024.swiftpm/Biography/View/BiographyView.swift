@@ -1,6 +1,6 @@
 //
 //  BiographyView.swift
-//  WWDC2024
+//  Firstly: She
 //
 //  Created by Ana Elisa Lima on 19/01/24.
 //

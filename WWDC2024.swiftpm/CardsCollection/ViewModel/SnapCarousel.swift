@@ -1,6 +1,6 @@
 //
 //  SnapCarousel.swift
-//  WWDC2024
+//  Firstly: She
 //
 //  Created by Ana Elisa Lima on 24/01/24.
 //

@@ -1,17 +1,19 @@
 //
 //  AboutMeView.swift
-//  WWDC2024
+//  Firstly: She
 //
 //  Created by Ana Elisa Lima on 26/01/24.
 //
 
 import SwiftUI
 
+// MARK: - AboutMeView
+/* Creates the view responsible to show my information */
+
 struct AboutMeView: View {
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        VStack {
             Button {
                 dismiss()
             } label: {
@@ -21,13 +23,14 @@ struct AboutMeView: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal, 20)
-            .offset(y: -6)
-            
-            Spacer()
-            
+            .offset(y: 0)
+        
+        Divider()
+        
+        VStack {
             Text("Hello, my name is Ana Elisa!")
                 .font(.custom("Silom", size: 21))
-                .offset(x: -22)
+                .offset(x: -25)
             
             Text("I'm a Chemistry student in Brazil. Since I was a child, I have been dreaming about the Cosmos and knew from a very young age that my path was inside science. My biggest dream is to become a scientist and make positive changes in the world! \n\nMy friends consider me as a human encyclopedia when it comes to space and astronaut data. I love to search about astronaut's biographies and memorize their educational background. By reading their stories, I get inspiration to keep working hard towards my dreams. \n\nDeveloping this app was challenging but brought me a great knowledge and memories! For the future, I hope to keep getting better in programming and learning more about the universe of computer science. I hope that you get inspired as well and never gave up of your dreams!")
                 .font(.custom("Single Day", size: 18))
@@ -47,6 +50,7 @@ struct AboutMeView: View {
             .offset(y: -20)
         }
         .navigationBarBackButtonHidden(true)
+        .offset(y: 10)
     }
 }
 

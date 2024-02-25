@@ -1,6 +1,6 @@
 //
 //  CardData.swift
-//  WWDC2024
+//  Firstly: She
 //
 //  Created by Ana Elisa Lima on 18/01/24.
 //

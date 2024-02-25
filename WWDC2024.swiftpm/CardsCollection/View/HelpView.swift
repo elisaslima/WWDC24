@@ -1,6 +1,6 @@
 //
 //  HelpView.swift
-//  WWDC2024
+//  Firstly: She
 //
 //  Created by Ana Elisa Lima on 21/02/24.
 //
@@ -37,8 +37,8 @@ struct HelpView: View {
                             .multilineTextAlignment(.center)
                             .padding()
                         
-                        Text("You are going to find a carousel of 10 cards. Each card has a description that you can access by clicking on \(Image(systemName: "exclamationmark.circle")). If you want to read the biography, click on the card. Once you have read it all, click on the button 'Done' to return and access the other biographies as well. Every time you read one biography, Alice will change her mood. You can watch her progress as well as your reading progress by watching the bar located at the top right corner. Here is a guide to Alice's mood:")
-                            .font(.custom("Single Day", size: 19))
+                        Text("You are going to find a carousel of 10 cards. Each card has a description that you can access only by clicking on \(Image(systemName: "exclamationmark.circle")). If you want to read the biography, click on the card. Once you have read it all, click on the button 'Done' to return and access the other biographies as well. Every time you read one biography, Alice will change her mood. \nYou can watch her progress as well as your reading progress by watching the bar located at the top right corner. You can just click on 'Finish' once you have read at least one biography. Feel free to read as much biographies as you want. After clicking on 'Finish', the bar will be reset and you will start your journey again. \nHere is a guide to Alice's mood:")
+                            .font(.custom("Single Day", size: 18))
                             .padding([.trailing, .leading])
                     }
                     
