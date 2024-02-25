@@ -15,53 +15,66 @@ struct Home: View {
     @State var posts: [CardData] = []
     @State var selectedIndex: Int? = nil
     @State var showHelp: Bool = false
+    let call: Call
+    let hasShownHelpKey = "hasShownHelp"
     
     var body: some View {
         NavigationStack {
-            ZStack {
-                Color("BackgroundColor")
+            VStack(spacing: 15) {
+                BarView()
                 
-                VStack(spacing: 15) {
-                    BarView()
-                    
-                    SnapCarousel(index: $currentIndex, items: posts) { post in
-                        GeometryReader { proxy in
-                            let size = proxy.size
-                            
-                            CardView(post: post,
-                                     size: size,
-                                     selectedCard: $selectedIndex)
-                        }
+                SnapCarousel(index: $currentIndex, items: posts) { post in
+                    GeometryReader { proxy in
+                        let size = proxy.size
+                        
+                        CardView(post: post,
+                                 size: size,
+                                 selectedCard: $selectedIndex)
                     }
-                    .padding(.vertical)
-                    .shadow(radius: 3)
-                    
-                    NavigationLink (destination: FinalView().navigationBarBackButtonHidden(true)) {
-                        Text("Finish")
-                            .frame(height: UIScreen.main.bounds.height / 25)
-                            .frame(maxWidth: .infinity)
-                    }
-                    .buttonStyle(.borderedProminent)
-                    .padding()
-                    
                 }
-                .frame(maxHeight: .infinity, alignment: .top)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button {
+                .padding(.vertical)
+                .shadow(radius: 3)
+                
+                NavigationLink(destination: FinalView(call: Call(id: Container.elements[0].id,
+                                                                       navigationTitle: Container.elements[0].navigationTitle,
+                                                                       scientistImage: Container.elements[0].scientistImage,
+                                                                       education: Container.elements[0].education,
+                                                                       biography: Container.elements[0].biography,
+                                                                       endingImage: Container.elements[0].endingImage,
+                                                                       subtitle: Container.elements[0].subtitle,
+                                                                       isRead: false))
+                    .navigationBarBackButtonHidden(true)) {
+                    Text("Finish")
+                        .font(.custom("Single Day", size: 21))
+                        .frame(height: UIScreen.main.bounds.height / 25)
+                        .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.borderedProminent)
+                .padding()
+            }
+            .preferredColorScheme(.light)
+            .frame(maxHeight: .infinity, alignment: .top)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        showHelp = true
+                    } label: {
+                        Image(systemName: "questionmark.circle")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                    }
+                    .sheet(isPresented: $showHelp) {
+                        HelpView(showHelp: $showHelp)
+                    }
+                    
+                    .onAppear {
+                        let hasShownHelp = UserDefaults.standard.bool(forKey: hasShownHelpKey)
+                        if !hasShownHelp {
                             showHelp = true
-                        } label: {
-                            Image(systemName: "questionmark.circle")
-                                .resizable()
-                                .frame(width: 30, height: 30)
-                        }
-                        .sheet(isPresented: $showHelp) {
-                            HelpView(showHelp: $showHelp)
+                            UserDefaults.standard.set(true, forKey: hasShownHelpKey)
                         }
                         
-                        .onAppear {
-                            posts = CardData.generateCards()
-                        }
+                        posts = CardData.generateCards()
                     }
                 }
             }
@@ -70,5 +83,12 @@ struct Home: View {
 }
 
 #Preview {
-    Home()
+    Home(call: Call(id: Container.elements[0].id,
+                    navigationTitle: Container.elements[0].navigationTitle,
+                    scientistImage: Container.elements[0].scientistImage,
+                    education: Container.elements[0].education,
+                    biography: Container.elements[0].biography,
+                    endingImage: Container.elements[0].endingImage,
+                    subtitle: Container.elements[0].subtitle,
+                    isRead: false))
 }

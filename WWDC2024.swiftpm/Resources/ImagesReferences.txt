@@ -1,6 +1,8 @@
 // LIST OF REFERENCES
+// WWDC2024
 
 Here is a list of all the photos used on the app and their respective references. I don't own any of them.
+I appreciate the authors and thank them for letting their images being an important part of my app.
 
 /// Valentina Tereshkova
 

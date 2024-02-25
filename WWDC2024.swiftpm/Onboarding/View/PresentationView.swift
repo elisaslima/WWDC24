@@ -35,6 +35,7 @@ struct PresentationView: View {
                 
                 NavigationLink(destination: Carousel().navigationBarBackButtonHidden(true)) {
                     Text("Let's start!")
+                        .font(.custom("Single Day", size: 21))
                         .frame(height: UIScreen.main.bounds.height/25)
                         .frame(maxWidth: .infinity)
                 }

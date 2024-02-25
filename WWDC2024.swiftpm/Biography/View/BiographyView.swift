@@ -30,101 +30,99 @@ struct BiographyView: View {
     }
     
     var body: some View {
-        NavigationStack {
-            ZStack {
-                Color("BackgroundColor")
-                
-                ScrollView(showsIndicators: false) {
+        NavigationView {
+            ScrollView(showsIndicators: false) {
+                VStack {
+                    Spacer()
+                    
+                    Rectangle()
+                        .fill(Color.clear)
+                        .frame(width: 350, height: 200)
+                        .overlay (
+                            Image(call.scientistImage)
+                                .resizable()
+                                .scaledToFit()
+                                .shadow(radius: 5)
+                        )
+                    
+                    Spacer()
+                    
                     VStack {
-                        Spacer()
-                        
-                        Rectangle()
-                            .fill(Color.clear)
-                            .frame(width: 350, height: 200)
-                            .overlay (
-                                Image(call.scientistImage)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .shadow(radius: 5)
-                            )
-                        
-                        Spacer()
-                        
-                        VStack {
-                            HStack {
-                                Text("Education")
-                                    .bold()
-                                    .font(.custom("Silom", size: 21))
-                                    .padding()
-                                
-                                Spacer()
-                            }
-                            
-                            Text(call.education)
-                                .padding(.horizontal)
-                                .font(.custom("Single Day", size: 20))
-                        }
-                        
-                        VStack {
-                            HStack {
-                                Text("Biography")
-                                    .bold()
-                                    .font(.custom("Silom", size: 21))
-                                    .padding()
-                                
-                                Spacer()
-                            }
-                            
-                            Text(call.biography)
-                                .padding(.horizontal)
-                                .font(.custom("Single Day", size: 20))
-                            
-                            VStack {
-                                Rectangle()
-                                    .fill(Color.clear)
-                                    .frame(width: 400, height: 200)
-                                    .overlay (
-                                        Image(call.endingImage)
-                                            .resizable()
-                                            .frame(width: 350, height: 200)
-                                            .scaledToFit()
-                                            .shadow(radius: 5)
-                                    )
-                            }
-                            
-                            Text(call.subtitle)
-                                .font(.custom("Single Day", size: 18))
-                                .italic()
-                                .multilineTextAlignment(.center)
+                        HStack {
+                            Text("Education")
+                                .bold()
+                                .font(.custom("Silom", size: 21))
                                 .padding()
+                            
+                            Spacer()
                         }
                         
-                        Spacer()
+                        Text(call.education)
+                            .padding(.horizontal)
+                            .font(.custom("Single Day", size: 20))
                     }
-                    .background(GeometryReader {
-                        Color.clear.preference(key: ViewOffsetKey.self, value: -$0.frame(in: .named("scroll")).origin.y)
-                    })
-                    .onPreferenceChange(ViewOffsetKey.self) { scrollOffset in
-                        completeReading = scrollOffset >= 923
-                        detector.send(scrollOffset)
+                    
+                    VStack {
+                        HStack {
+                            Text("Biography")
+                                .bold()
+                                .font(.custom("Silom", size: 21))
+                                .padding()
+                            
+                            Spacer()
+                        }
+                        
+                        Text(call.biography)
+                            .padding(.horizontal)
+                            .font(.custom("Single Day", size: 20))
+                        
+                        VStack {
+                            Rectangle()
+                                .fill(Color.clear)
+                                .frame(width: 400, height: 200)
+                                .overlay (
+                                    Image(call.endingImage)
+                                        .resizable()
+                                        .frame(width: 350, height: 200)
+                                        .scaledToFit()
+                                        .shadow(radius: 5)
+                                )
+                        }
+                        
+                        Text(call.subtitle)
+                            .font(.custom("Single Day", size: 18))
+                            .italic()
+                            .multilineTextAlignment(.center)
+                            .padding()
                     }
                     
                     Spacer()
                 }
-                .coordinateSpace(name: "scroll")
-                .onReceive(publisher) {
-                    print("Stopped on: \($0)")
+                .background(GeometryReader {
+                    Color.clear.preference(key: ViewOffsetKey.self, value: -$0.frame(in: .named("scroll")).origin.y)
+                })
+                .onPreferenceChange(ViewOffsetKey.self) { scrollOffset in
+                    completeReading = scrollOffset >= 923
+                    detector.send(scrollOffset)
                 }
-                .navigationTitle(call.navigationTitle)
+                
+                Spacer()
             }
-            
-            NavigationLink(destination: Carousel().onAppear {
-                if !call.isRead {
-                    currentReading.biographiesRead += 1
-                    Container.elements[call.id - 1].isRead = true
-                }
+            .preferredColorScheme(.light)
+            .coordinateSpace(name: "scroll")
+            .onReceive(publisher) {
+                print("Stopped on: \($0)")
             }
-                .navigationBarBackButtonHidden(true)) {
+            .navigationTitle(call.navigationTitle)
+        }
+        
+        NavigationLink(destination: Carousel().onAppear {
+            if !call.isRead {
+                currentReading.biographiesRead += 1
+                Container.elements[call.id - 1].isRead = true
+            }
+        }
+            .navigationBarBackButtonHidden(true)) {
                 Text("Done")
                     .frame(height: UIScreen.main.bounds.height / 25)
                     .frame(maxWidth: .infinity)
@@ -132,10 +130,8 @@ struct BiographyView: View {
             .buttonStyle(.borderedProminent)
             .disabled(!completeReading)
             .padding([.leading, .trailing])
-        }
     }
 }
-    
 
 struct ViewOffsetKey: PreferenceKey {
     typealias Value = CGFloat

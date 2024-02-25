@@ -46,13 +46,20 @@ struct SnapCarousel<Content: View, T: Identifiable>: View {
                     .updating($offset, body: { value, out, _ in
                         out =  value.translation.width
                 })
+                
+                    .onEnded({ value in
+                        let offsetX = value.translation.width
+                        let progress = -offsetX / width
+                        let newIndex = (CGFloat(index) + progress).rounded()
+                        index = min(max(Int(newIndex), 0), list.count - 1)
+                    })
                     .onEnded({ value in
                         let offsetX = value.translation.width
                         let progress = -offsetX / width
                         let roundIndex = progress.rounded()
                         
                         currentIndex = max(min(currentIndex + Int(roundIndex), list.count - 1), 0)
-                        currentIndex = index
+                        index = currentIndex
                 })
                     .onChanged({value in
                         let offsetX = value.translation.width
@@ -60,7 +67,7 @@ struct SnapCarousel<Content: View, T: Identifiable>: View {
                         let roundIndex = progress.rounded()
                         
                         index = max(min(currentIndex + Int(roundIndex), list.count - 1), 0)
-                })
+                    })
             )
         }
         .animation(.easeInOut, value: offset == 0)

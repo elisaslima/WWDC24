@@ -11,7 +11,14 @@ import SwiftUI
 
 struct Carousel: View {
     var body: some View {
-        Home()
+        Home(call: Call(id: Container.elements[0].id,
+                        navigationTitle: Container.elements[0].navigationTitle,
+                        scientistImage: Container.elements[0].scientistImage,
+                        education: Container.elements[0].education,
+                        biography: Container.elements[0].biography,
+                        endingImage: Container.elements[0].endingImage,
+                        subtitle: Container.elements[0].subtitle,
+                        isRead: false))
     }
 }
 

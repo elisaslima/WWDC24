@@ -32,6 +32,7 @@ struct PresentationOnboardingView: View {
                     .scaledToFit()
             }
         }
+        .preferredColorScheme(.light)
     }
 }
 
