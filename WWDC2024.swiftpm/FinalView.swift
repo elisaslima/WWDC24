@@ -35,9 +35,9 @@ struct FinalView: View {
                     Spacer()
                     
                     NavigationLink(destination: PresentationView().onAppear {
-                        if !call.isRead {
-                            currentReading.biographiesRead = 0
-                            Container.elements[0].isRead = true
+                      currentReading.biographiesRead = 0
+                          for i in 0..<10 {
+                            Container.elements[i].isRead = false
                         }
                     }
                         .navigationBarBackButtonHidden(true)) {
